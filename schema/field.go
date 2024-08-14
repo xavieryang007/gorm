@@ -294,7 +294,9 @@ func (schema *Schema) ParseField(fieldStruct reflect.StructField) *Field {
 			field.AutoCreateTime = UnixTime
 		} else if strings.ToUpper(v) == "NANO" {
 			field.AutoCreateTime = UnixNanosecond
-		} else if strings.ToUpper(v) == "MILLI" {
+		}  else if strings.ToUpper(v) == "DATETIME" {
+			field.AutoCreateTime = UnixTime
+		}else if strings.ToUpper(v) == "MILLI" {
 			field.AutoCreateTime = UnixMillisecond
 		} else {
 			field.AutoCreateTime = UnixSecond
@@ -306,7 +308,9 @@ func (schema *Schema) ParseField(fieldStruct reflect.StructField) *Field {
 			field.AutoUpdateTime = UnixTime
 		} else if strings.ToUpper(v) == "NANO" {
 			field.AutoUpdateTime = UnixNanosecond
-		} else if strings.ToUpper(v) == "MILLI" {
+		} else if strings.ToUpper(v) == "DATETIME" {
+			field.AutoUpdateTime = UnixTime
+		}else if strings.ToUpper(v) == "MILLI" {
 			field.AutoUpdateTime = UnixMillisecond
 		} else {
 			field.AutoUpdateTime = UnixSecond
